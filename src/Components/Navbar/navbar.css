@@ -1,0 +1,74 @@
+.navbar{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 170px;
+}
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+}
+
+.nav-connect{
+    padding: 15px 37px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #5A3C14 0%, #A6803C 50%, #C8A951 100%);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+
+/*.name-logo{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 20px;
+    padding: 20px 40px;
+    border-radius: 25px;
+    background: linear-gradient(267deg, #1A1F1A 0%, #3A4A34 100%);
+    font-size: 22px;
+    cursor: pointer; 
+}*/
+
+/*.name-logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  font-size: 22px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: linear-gradient(264deg, #5A3C14 0%, #A6803C 50%, #C8A951 100%);
+  color: #E0E0E0; 
+  cursor: default;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}*/
+
+.name-logo {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  list-style: none;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #B8860B; /* Rich dark gold */
+}
+
+.name-logo li {
+  background: none;
+  padding: 0;
+}
+
+
+.nav-connect:hover{
+    transform: scale(1.05);
+}
