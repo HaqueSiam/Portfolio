@@ -4,7 +4,7 @@ import theme_pattern from '../../assets/theme_pattern.svg'; // Adjust the path a
 import profile_img from '../../assets/Rounded.png'; // Adjust the path as necessary
 const About = () => {
   return (
-    <div className="about">
+    <div id='about' className="about">
       <div className="about-title">
         <h1>About me</h1>
         <img src={theme_pattern} alt="Theme Pattern" />
