@@ -1,137 +1,313 @@
-.navbar{
-    display : flex;
+/* Base Navbar Styles */
+.navbar {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 20px 170px;
+    position: relative;
+    z-index: 100;
 }
-.nav-menu{
+
+/* Logo/Brand Styles */
+.name-logo {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #B8860B;
+    cursor: default;
+    user-select: none;
+}
+
+.name-logo span {
+    transition: color 0.3s ease;
+}
+
+.name-logo:hover span {
+    color: #DAA520;
+}
+
+/* Navigation Menu Styles */
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
     gap: 60px;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-connect{
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-menu li:hover .anchor-link {
+    color: #DAA520;
+    transform: translateY(-2px);
+}
+
+.nav-underline {
+    display: flex;
+    margin: auto;
+    transition: opacity 0.3s ease;
+}
+
+/* Anchor Link Styles */
+.anchor-link {
+    text-decoration: none;
+    color: antiquewhite;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 4px;
+    position: relative;
+}
+
+.anchor-link:hover {
+    background-color: rgba(218, 165, 32, 0.1);
+}
+
+.anchor-link[aria-current="page"] {
+    color: #DAA520;
+}
+
+/* Connect Button Styles */
+.nav-connect {
     padding: 15px 37px;
     border-radius: 50px;
     background: linear-gradient(264deg, #5A3C14 0%, #A6803C 50%, #C8A951 100%);
     font-size: 24px;
     cursor: pointer;
-    transition: 0.5s;
-    
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(90, 60, 20, 0.2);
 }
 
-/*.name-logo{
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 60px;
-    font-size: 20px;
-    padding: 20px 40px;
-    border-radius: 25px;
-    background: linear-gradient(267deg, #1A1F1A 0%, #3A4A34 100%);
-    font-size: 22px;
-    cursor: pointer; 
-}*/
-
-/*.name-logo {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
-  font-size: 22px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  background: linear-gradient(264deg, #5A3C14 0%, #A6803C 50%, #C8A951 100%);
-  color: #E0E0E0; 
-  cursor: default;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}*/
-
-.name-logo {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  list-style: none;
-  font-size: 30px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #B8860B; /* Rich dark gold */
-}
-
-.name-logo li {
-  background: none;
-  padding: 0;
-}
-
-
-.nav-connect:hover{
+.nav-connect:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(90, 60, 20, 0.3);
 }
 
-.nav-menu li{
-  display:flex;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
+.nav-connect .anchor-link {
+    color: white;
+    font-weight: 500;
 }
 
-.nav-menu li img{
-  display: flex;
-  margin: auto;
+.nav-connect .anchor-link:hover {
+    background: none;
+    color: white;
 }
 
-.anchor-link {
-  text-decoration: none;
-  color:antiquewhite
-}
-.nav-mob-close{
-  display: none;
-}
-.nav-mob-open{
-  display: none;
-}
-@media(max-width:768px){
-  .navbar{
-    margin:20px 50px
-  }
-  .nav-connect{
+/* Mobile Menu Controls */
+.nav-mob-toggle,
+.nav-mob-close {
     display: none;
-  }
-  .nav-mob-open{
-    display: block;
-    position: fixed;
-    right: 30px;
-  }
-  .nav-mob-close{
-    display: block;
-    position: relative;
-    top: 30px;
-    left: 290px;
-    width: 30px;
-  }
-  .nav-menu{
-    position: fixed;
-    flex-direction: column;
-    align-items: start;
-    top: 0;
-    gap: 30px;
-    background-color: #1F0016;
-    width: 350px;
-    height: 100%;
-    z-index: 2;
-    transition: right 0.5s;
-    right: -350px;
-  }
-  .nav-menu li{
-    font-size: 30px;
-    padding-left: 100px;
-    flex-direction: row;
-    gap: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
 
-  }
+.nav-mob-toggle:hover,
+.nav-mob-close:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-mob-close-container {
+    display: none;
+}
+
+.nav-overlay {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        margin: 20px 50px;
+        padding: 10px 0;
+    }
+
+    /* Show mobile menu toggle */
+    .nav-mob-toggle {
+        display: block;
+        position: fixed;
+        right: 30px;
+        top: 30px;
+        z-index: 1001;
+        background: rgba(31, 0, 22, 0.8);
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+    }
+
+    .nav-mob-toggle img {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Mobile Menu Close Button */
+    .nav-mob-close-container {
+        display: block;
+        width: 100%;
+        text-align: right;
+        margin-bottom: 20px;
+    }
+
+    .nav-mob-close {
+        display: block;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+
+    .nav-mob-close img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Mobile Navigation Menu */
+    .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        align-items: flex-start;
+        top: 0;
+        right: -350px;
+        gap: 30px;
+        background: linear-gradient(180deg, #1F0016 0%, #2A001C 100%);
+        width: 350px;
+        height: 100vh;
+        z-index: 1000;
+        transition: right 0.5s ease;
+        padding-top: 20px;
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(20px);
+        overflow-y: auto;
+    }
+
+    .nav-menu.nav-menu-open {
+        right: 0;
+    }
+
+    .nav-menu li {
+        font-size: 24px;
+        padding-left: 40px;
+        padding-right: 40px;
+        width: calc(100% - 80px);
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu li:hover {
+        background-color: rgba(218, 165, 32, 0.1);
+    }
+
+    .anchor-link {
+        width: 100%;
+        padding: 0;
+    }
+
+    .nav-underline {
+        margin: 0;
+        width: 20px;
+    }
+
+    /* Mobile Menu Overlay */
+    .nav-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Logo adjustments for mobile */
+    .name-logo {
+        font-size: 24px;
+    }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .navbar {
+        margin: 20px 80px;
+    }
+
+    .nav-menu {
+        gap: 40px;
+        font-size: 18px;
+    }
+
+    .nav-connect {
+        padding: 12px 28px;
+        font-size: 20px;
+    }
+}
+
+/* Large screen adjustments */
+@media (min-width: 1400px) {
+    .navbar {
+        margin: 30px 200px;
+    }
+
+    .nav-menu {
+        gap: 80px;
+        font-size: 22px;
+    }
+
+    .nav-connect {
+        padding: 18px 45px;
+        font-size: 26px;
+    }
+
+    .name-logo {
+        font-size: 34px;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .nav-menu,
+    .nav-connect,
+    .anchor-link,
+    .name-logo span {
+        transition: none;
+    }
+}
+
+/* Focus styles for accessibility */
+.anchor-link:focus,
+.nav-mob-toggle:focus,
+.nav-mob-close:focus {
+    outline: 2px solid #DAA520;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .nav-connect {
+        border: 2px solid currentColor;
+    }
+    
+    .nav-menu li {
+        border-bottom-color: currentColor;
+    }
 }
