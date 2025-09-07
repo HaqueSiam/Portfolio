@@ -9,7 +9,7 @@ const Services = () => {
     <div id='services' className="services">
         <div className="services-title">
          <h1>My Services</h1>
-         <img src={theme_pattern} alt="theme" />   
+         <img src={theme_pattern} alt="theme" />  
         </div>
         <div className="services-container">
           {Services_Data.map((service,index) =>{
@@ -22,9 +22,10 @@ const Services = () => {
                 <img src={arrow_icon} alt="arrow" />
               </div>
         </div>
-          })} 
+          })}
         </div>
     </div>
     );
 }
-export default Services;      
+
+export default Services;

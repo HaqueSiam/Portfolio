@@ -1,52 +1,80 @@
-.mywork{
+/* Base Styles - Desktop */
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 80px;
     margin: 80px 170px;
+    padding: 40px 0;
 }
 
-.mywork-title{
+.mywork-title {
     position: relative;
+    text-align: center;
 }
 
-.mywork-title h1{
+.mywork-title h1 {
     padding: 0px 30px;
     font-size: 80px;
     font-weight: 600;
+    margin: 0;
+    color: #f5f5f5;
+    position: relative;
+    z-index: 1;
 }
 
-.mywork-title img{
+.mywork-title img {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.mywork-container{
+.mywork-title:hover img {
+    opacity: 1;
+}
+
+.mywork-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.mywork-container img{
-    box-sizing: border-box;
-    width: 419px;
+.mywork-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mywork-container img {
+    width: 100%;
     height: 280px;
-    transition: 0.3s;
+    object-fit: cover;
+    transition: all 0.3s ease;
     cursor: pointer;
+    border-radius: 15px;
 }
 
-.mywork-container img:hover{
-    transform: scale(1.10);
+.mywork-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(139, 69, 19, 0.4);
+}
+
+.mywork-item:hover img {
+    transform: scale(1.1);
     border: 4px solid #8B4513;
-    border-radius: 10px;
-    transition: 0.3s;
 }
 
-.mywork-showmore{
+.mywork-showmore {
     display: flex;
+    align-items: center;
     gap: 15px;
     border-radius: 50px;
     border: 2px solid #8B4513;
@@ -55,43 +83,323 @@
     font-weight: 500;
     margin-bottom: 80px;
     cursor: pointer;
-    transition: 0.6s;
+    transition: all 0.6s ease;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    color: #f5f5f5;
 }
 
-.mywork-showmore:hover{
+.mywork-showmore p {
+    margin: 0;
+    transition: color 0.6s ease;
+}
+
+.mywork-showmore img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.6s ease;
+    filter: brightness(0) invert(1);
+}
+
+.mywork-showmore:hover {
     background: linear-gradient(264deg, #8B4513 10%, #D2B48C 100%);
     color: white;
     gap: 30px;
-    transition: 0.6s;
+    transform: scale(1.05);
 }
 
-@media(max-width:768px){
-    .mywork{
-        gap:50px;
-        margin: 50px 70px;
-        align-items: start;
+.mywork-showmore:hover img {
+    transform: translateX(10px);
+    filter: brightness(0) invert(1);
+}
+
+/* Large Desktop Styles */
+@media (min-width: 1400px) {
+    .mywork {
+        margin: 100px 200px;
+        gap: 100px;
     }
-    .mywork-title h1{
+    
+    .mywork-title h1 {
+        font-size: 90px;
+    }
+    
+    .mywork-container {
+        gap: 50px;
+        max-width: 1400px;
+    }
+    
+    .mywork-container img {
+        height: 320px;
+    }
+    
+    .mywork-showmore {
+        padding: 35px 70px;
+        font-size: 24px;
+        margin-bottom: 100px;
+    }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .mywork {
+        margin: 60px 80px;
+        gap: 70px;
+    }
+    
+    .mywork-title h1 {
+        font-size: 70px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 35px;
+    }
+    
+    .mywork-container img {
+        height: 260px;
+    }
+    
+    .mywork-showmore {
+        padding: 25px 50px;
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .mywork {
+        gap: 60px;
+        margin: 50px 30px;
+        align-items: center;
+        padding: 20px 0;
+    }
+    
+    .mywork-title h1 {
         padding: 0;
         font-size: 50px;
-        font-weight: 600;
     }
-    .mywork-title img{
+    
+    .mywork-title img {
         width: 130px;
-        margin-right: -20px;
+        right: -20px;
+        bottom: -10px;
     }
-    .mywork-container{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-    .mywork-container img{
+    
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
         width: 100%;
-        height: 100%;
     }
-    .mywork-showmore{
+    
+    .mywork-container img {
+        height: 200px;
+    }
+    
+    .mywork-item {
+        border-radius: 12px;
+    }
+    
+    .mywork-container img {
+        border-radius: 12px;
+    }
+    
+    .mywork-showmore {
         padding: 20px 40px;
         font-size: 18px;
-        margin: 50px auto;
-        cursor:pointer;
+        margin-bottom: 40px;
+        gap: 12px;
+    }
+    
+    .mywork-showmore:hover {
+        gap: 20px;
+    }
+    
+    .mywork-showmore img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 480px) {
+    .mywork {
+        margin: 40px 20px;
+        gap: 50px;
+    }
+    
+    .mywork-title h1 {
+        font-size: 40px;
+    }
+    
+    .mywork-title img {
+        width: 110px;
+        right: -15px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .mywork-container img {
+        height: 220px;
+    }
+    
+    .mywork-item {
+        border-radius: 10px;
+    }
+    
+    .mywork-container img {
+        border-radius: 10px;
+    }
+    
+    .mywork-showmore {
+        padding: 18px 35px;
+        font-size: 16px;
+        margin-bottom: 30px;
+        gap: 10px;
+    }
+    
+    .mywork-showmore:hover {
+        gap: 18px;
+    }
+    
+    .mywork-showmore img {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+    .mywork {
+        margin: 30px 15px;
+        gap: 40px;
+    }
+    
+    .mywork-title h1 {
+        font-size: 36px;
+        padding: 0 10px;
+    }
+    
+    .mywork-container img {
+        height: 200px;
+    }
+    
+    .mywork-showmore {
+        padding: 15px 30px;
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+    .mywork {
+        margin: 120px 300px;
+        gap: 120px;
+    }
+    
+    .mywork-title h1 {
+        font-size: 100px;
+    }
+    
+    .mywork-container {
+        max-width: 1600px;
+        gap: 60px;
+    }
+    
+    .mywork-container img {
+        height: 380px;
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .mywork {
+        gap: 40px;
+        margin: 30px 40px;
+    }
+    
+    .mywork-title h1 {
+        font-size: 45px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .mywork-container img {
+        height: 160px;
+    }
+    
+    .mywork-showmore {
+        padding: 15px 30px;
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Accessibility and Performance */
+@media (prefers-reduced-motion: reduce) {
+    .mywork-item,
+    .mywork-container img,
+    .mywork-showmore,
+    .mywork-showmore img,
+    .mywork-title img {
+        transition: none;
+    }
+    
+    .mywork-item:hover,
+    .mywork-item:hover img,
+    .mywork-showmore:hover,
+    .mywork-showmore:hover img {
+        transform: none;
+    }
+}
+
+/* Focus styles for accessibility */
+.mywork-item:focus,
+.mywork-showmore:focus {
+    outline: 2px solid #D2B48C;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .mywork-showmore {
+        border-color: #D2B48C;
+        color: #D2B48C;
+    }
+    
+    .mywork-showmore:hover {
+        background: #D2B48C;
+        color: #000;
+    }
+}
+
+/* Print styles */
+@media print {
+    .mywork {
+        margin: 20px;
+        gap: 40px;
+    }
+    
+    .mywork-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .mywork-item:hover,
+    .mywork-showmore:hover {
+        transform: none;
+        background: none;
+    }
+    
+    .mywork-showmore {
+        display: none;
     }
 }
