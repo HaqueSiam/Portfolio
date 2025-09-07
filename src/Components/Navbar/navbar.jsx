@@ -60,7 +60,7 @@ const Navbar = () => {
         { id: 'home', label: 'Home', href: '#home' },
         { id: 'about', label: 'About Me', href: '#about' },
         { id: 'services', label: 'Services', href: '#services' },
-        { id: 'work', label: 'Portfolio', href: '#work' },
+        { id: 'work', label: 'Projects', href: '#work' },
         { id: 'contact', label: 'Contact', href: '#contact' }
     ];
 
