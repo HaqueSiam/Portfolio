@@ -2,6 +2,8 @@ import React from 'react';
 import "./hero.css";
 import profile_img from '../../assets/profile_img.png';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import myCV from '../../assets/Mohammad_Mahmudul_Haque_Siam_CV.pdf';
+
 
 const Hero = () => {
   return (
@@ -34,7 +36,7 @@ const Hero = () => {
             </AnchorLink>
             <a 
               className="hero-resume" 
-              href="/assets/Mohammad_Mahmudul_Haque_Siam_CV.pdf"
+              href={myCV}
               download="Mohammad_Mahmudul_Haque_Siam_CV.pdf"
               role="button"
               aria-label="Download Mohammad Mahmudul Haque Siam's Resume"
